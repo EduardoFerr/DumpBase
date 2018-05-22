@@ -21,7 +21,7 @@ do
 	if [ "$I" != 'Database' ]
 	        then
 			echo "- $I"
-	                mysqldump -u$MYSQL_USER -p$MYSQL_PASS -P$HOST -P$PORT --complete-insert "$I" > "$I".sql;
+	                mysqldump -u$MYSQL_USER -p$MYSQL_PASS -h$HOST -P$PORT --complete-insert "$I" > "$I".sql;
 	                gzip "$I".sql -f
 	fi
 done
